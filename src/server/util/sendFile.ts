@@ -5,6 +5,9 @@ import path from 'path';
 import type express from 'express';
 import isChildOf from './isChildOf';
 
+// Ours
+import { DEFAULT_ASSETS_RE } from './knownAssetTypes';
+
 export default (
 	directoryToPreventTraversalOutOf: string,
 	fileLocation: string,
@@ -12,6 +15,10 @@ export default (
 	next: express.NextFunction,
 ): void => {
 	if (isChildOf(directoryToPreventTraversalOutOf, fileLocation)) {
+		if (DEFAULT_ASSETS_RE.test(fileLocation)) {
+			res.header('Cache-Control', 'public, max-age=3600, stale-while-revalidate=36000');
+		}
+
 		res.sendFile(fileLocation, (err: NodeJS.ErrnoException) => {
 			if (err) {
 				if (err.code === 'ENOENT') {
