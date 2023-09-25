@@ -5,6 +5,7 @@ import path from 'path';
 import 'reflect-metadata';
 import { DataSource } from 'typeorm';
 export * from './entity';
+import { argv } from 'yargs';
 
 // Ours
 import { User } from './entity/User';
@@ -16,7 +17,7 @@ import { Identity } from './entity/Identity';
 import { ApiKey } from './entity/ApiKey';
 import rootPath from '../../shared/utils/rootPath';
 
-const dbPath = path.join(rootPath.path, 'db/nodecg.sqlite3');
+const dbPath = (argv.dbPath as string) ?? path.join(rootPath.path, 'db/nodecg.sqlite3');
 export const testing = process.env.NODECG_TEST?.toLowerCase() === 'true';
 
 const dataSource = new DataSource({
