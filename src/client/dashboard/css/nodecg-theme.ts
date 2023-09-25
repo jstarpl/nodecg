@@ -7,8 +7,8 @@ $documentContainer.innerHTML = `<dom-module id="nodecg-theme">
 			html {
 				color: white;
 
-				--nodecg-brand-blue: #00bebe;
-				--nodecg-brand-blue-dark: #004949;
+				--nodecg-brand-blue: #00ADEE;
+				--nodecg-brand-blue-dark: #004D6A;
 				--default-primary-color: var(--nodecg-brand-blue);
 				--primary-color: var(--nodecg-brand-blue);
 

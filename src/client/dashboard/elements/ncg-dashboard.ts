@@ -59,7 +59,7 @@ class NcgDashboard extends Polymer.PolymerElement {
 			}
 
 			app-header {
-				background-color: #2F3A4F;
+				background-color: #111111;
 				--app-header-shadow: {
 					box-shadow: inset 0 5px 6px -3px rgba(0, 0, 0, 0.2);
 					height: 10px;
@@ -69,7 +69,7 @@ class NcgDashboard extends Polymer.PolymerElement {
 
 			app-drawer {
 				--app-drawer-content-container: {
-					background-color: #2F3A4F;
+					background-color: #111111;
 				};
 			}
 
@@ -117,7 +117,8 @@ class NcgDashboard extends Polymer.PolymerElement {
 
 			#mainLogo {
 				height: 48px;
-				width: 48px;
+				width: 64px;
+				opacity: 0.3;
 			}
 
 			#drawerToolbar {
@@ -193,6 +194,20 @@ class NcgDashboard extends Polymer.PolymerElement {
 				overflow: auto;
 			}
 
+			#pages::after {
+				display: block;
+				position: fixed;
+				z-index: -1;
+				content: 'Jan Starzak Broadcast Graphics';
+				bottom: 20px;
+				left: auto;
+				right: 40px;
+				font-family: 'Roboto', 'Noto', sans-serif;
+				opacity: 0.04;
+				transform-origin: left center;
+				transform: translate(100%, 0) rotate(-90deg);
+			}
+
 			#reconnectToast {
 				@apply --layout-center;
 				@apply --layout-horizontal;
@@ -255,7 +270,7 @@ class NcgDashboard extends Polymer.PolymerElement {
 				<template is="dom-if" if="[[smallScreen]]">
 					<app-toolbar id="drawerToolbar">
 						<paper-icon-button icon="close" aria-label="Close" drawer-toggle=""></paper-icon-button>
-						<img id="drawerLogo" src="/dashboard/img/horiz-logo-2x.png" alt="NodeCG">
+						<img id="drawerLogo" src="/dashboard/img/logo.svg" alt="JSBG">
 					</app-toolbar>
 
 					<iron-selector class="list" selected="[[routeData.page]]" attr-for-selected="data-route">
@@ -286,7 +301,7 @@ class NcgDashboard extends Polymer.PolymerElement {
 					<app-toolbar id="mainToolbar">
 						<paper-icon-button icon="menu" drawer-toggle="" alt="Toogle navigation menu" hidden="[[!smallScreen]]"></paper-icon-button>
 
-						<img id="mainLogo" src="/dashboard/img/square-logo.png" alt="NodeCG">
+						<img id="mainLogo" src="/dashboard/img/logo.svg" alt="JSBG">
 
 						<template is="dom-if" if="[[!smallScreen]]">
 							<paper-tabs class="spacer" scrollable="" selected="[[routeData.page]]" attr-for-selected="route">
