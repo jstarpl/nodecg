@@ -1,0 +1,116 @@
+{
+  "name": "gfx",
+  "version": "0.0.0",
+  "description": "",
+  "homepage": "",
+  "author": {
+    "name": "Jan Starzak",
+    "email": "jan.starzak@gmail.com",
+    "url": "https://jsbg.pl/"
+  },
+  "contributors": [
+    {
+      "name": "Marta Welfe-Starzak",
+      "email": "mwelfe@gmail.com",
+      "url": "https://jsbg.pl/"
+    },
+    {
+      "name": "Marks Polakovs",
+      "email": "marks.polakovs@ystv.co.uk"
+    }
+  ],
+  "scripts": {
+    "start": "npm run build:extension && vite",
+    "build": "npm run build:extension && vite build",
+    "build:extension": "esbuild ./src/extension/index.extension.ts --bundle --platform=node --alias:common=./src/common --packages=external --outfile=extension.js",
+    "schema": "json2ts -i schemas/ -o src/common/types/ && json2ts -i configschema.json -o src/common/types/config.d.ts"
+  },
+  "nodecg": {
+    "compatibleRange": "^2.0.0",
+    "dashboardPanels": [
+      {
+        "name": "globalSettings",
+        "title": "Ustawienia",
+        "width": 6,
+        "file": "globalSettings.html",
+        "headerColor": "#555555",
+        "workspace": "Ustawienia"
+      },
+      {
+        "name": "playlist",
+        "title": "Szpigiel",
+        "width": 6,
+        "file": "playlist.html",
+        "headerColor": "#000000"
+      },
+      {
+        "name": "scorebug",
+        "title": "ScoreBug",
+        "width": 6,
+        "file": "scorebug.html",
+        "headerColor": "#0174b3"
+      },
+      {
+        "name": "lowerThird",
+        "title": "Komentarz / Wizytówka Ogólna",
+        "width": 3,
+        "file": "lowerThird.html",
+        "headerColor": "#000000"
+      }
+    ],
+    "graphics": [
+      {
+        "file": "graphics.html",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "file": "operator.html",
+        "width": 720,
+        "height": 1280
+      }
+    ]
+  },
+  "repository": "https://github.com/ystv/nodecg-react-boilerplate.git",
+  "private": true,
+  "devDependencies": {
+    "@babel/core": "^7.13.14",
+    "@babel/preset-env": "^7.15.8",
+    "@babel/preset-react": "^7.13.13",
+    "@babel/preset-typescript": "^7.13.0",
+    "@types/jsdom": "^16.2.15",
+    "@types/react": "^18.2.23",
+    "@types/react-dom": "^18.2.8",
+    "cross-env": "^7.0.3",
+    "esbuild": "^0.19.2",
+    "json-schema-to-typescript": "^10.1.4",
+    "typescript": "^4.5.4",
+    "vite": "^4.4.9",
+    "vite-plugin-nodecg": "^2.0.0-rc2"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
+    "@mui/icons-material": "^5.8.4",
+    "@mui/material": "^5.9.0",
+    "@nodecg/types": "file:./../../generated-types",
+    "googleapis": "^108.0.0",
+    "jsdom": "^20.0.0",
+    "json-multi-parse": "^1.2.0",
+    "node-fetch-commonjs": "^3.3.1",
+    "obs-websocket-js": "^5.0.1",
+    "react": "^18.2.0",
+    "react-dnd": "^16.0.1",
+    "react-dnd-html5-backend": "^16.0.1",
+    "react-dom": "^18.2.0",
+    "react-transition-group": "^4.4.5",
+    "readline": "^1.3.0"
+  },
+  "browserslist": [
+    "defaults",
+    "Chrome >= 75"
+  ],
+  "prettier": {
+    "useTabs": true
+  }
+}

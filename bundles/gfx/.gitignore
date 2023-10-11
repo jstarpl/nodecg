@@ -1,0 +1,13 @@
+node_modules/
+extension.js
+*hot-update*
+*.bundle.js*
+graphics/*
+!graphics/**/
+!graphics/draco/*
+graphics/models
+graphics/images
+graphics/videos
+graphics/fonts
+dashboard/**/*
+shared/**/*

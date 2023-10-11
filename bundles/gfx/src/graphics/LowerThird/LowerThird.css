@@ -1,0 +1,72 @@
+#LowerThird {
+	color: black;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 1920px;
+	height: 1080px;
+
+	white-space: nowrap;
+
+	opacity: 1;
+	overflow: visible;
+}
+
+
+#LowerThird > .background {
+	position: absolute;
+	opacity: 1;
+	top: 836px;
+	left: 106px;
+	z-index: -1;
+}
+
+
+#LowerThird .LowerThird__container {
+	position: absolute;
+	top: 836px;
+	left: 106px;
+	width: 1002px;
+	height: 196px;
+	font-family: "IndustryBold";
+	font-weight: bold;
+}
+
+#LowerThird .LowerThird_top {
+	position: absolute;
+	font-size: 40px;
+	color: #fff;
+	text-transform: uppercase;
+	top: 53px;
+    left: 156px;
+}
+
+#LowerThird .LowerThird_bottom {
+	position: absolute;
+	font-size: 34px;
+	color: #1a1a1a;
+	text-transform: uppercase;
+	top: 129px;
+    left: 178px;
+}
+
+#LowerThird.off {
+	visibility: hidden;
+	transition: visibility 0s 2s;
+}
+
+#LowerThird.on .LowerThird_top {
+	opacity: 1;
+	transition: opacity 200ms 600ms;
+}
+
+#LowerThird.on .LowerThird_bottom {
+	opacity: 1;
+	transition: opacity 200ms 750ms;
+}
+
+#LowerThird.off .LowerThird_top,
+#LowerThird.off .LowerThird_bottom {
+	opacity: 0;
+	transition: opacity 200ms 200ms;
+}

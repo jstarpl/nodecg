@@ -1,0 +1,84 @@
+@import url("./fonts/stylesheet.css");
+
+:root {
+  --regular-font: 'Montserrat';
+  --condensed-font: futura-pt-condensed, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width: 1920px;
+  height: 1080px;
+  font-family: var(--regular-font);
+  font-weight: 600;
+  letter-spacing: -1px;
+  position: relative;
+}
+
+body.debug {
+  background: #999
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" fill-opacity=".25" ><rect x="200" width="200" height="200" /> <rect y="200" width="200" height="200" /></svg>');
+  background-size: 30px 30px;
+  overflow: visible;
+}
+
+body.debug::after {
+  content: " ";
+  position: absolute;
+  display: block;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  top: 0;
+  left: 0;
+  height: 1080px;
+  width: 1920px;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+body.debug::before {
+  content: " ";
+  position: absolute;
+  display: block;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  top: 54px;
+  left: 96px;
+  height: 972px;
+  width: 1728px;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+#wipe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10000;
+}
+
+#loop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -3;
+  opacity: 0;
+  transition: 1s opacity ease-in-out 0s;
+}
+
+#loop.on {
+  opacity: 1;
+  transition: 1s opacity ease-in-out 0.5s;
+}
+
+sup {
+  vertical-align: top;
+  position: relative;
+  font-size: 0.6em;
+  top: -0.20em;
+}
+

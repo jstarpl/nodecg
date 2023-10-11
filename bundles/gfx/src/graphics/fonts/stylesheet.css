@@ -1,0 +1,20 @@
+@font-face {
+  font-family: 'IndustryBlack';
+  font-variant: normal;
+  font-weight: bold;
+  src: url('IndustryBlack.otf');
+}
+
+@font-face {
+  font-family: 'IndustryBook';
+  font-variant: normal;
+  font-weight: normal;
+  src: url('IndustryBook.otf');
+}
+
+@font-face {
+  font-family: 'IndustryBold';
+  font-variant: normal;
+  font-weight: bold;
+  src: url('IndustryBold.otf');
+}
